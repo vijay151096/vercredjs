@@ -1,0 +1,60 @@
+diff --git a/node_modules/@digitalbazaar/rsa-verification-key-2018/lib/RsaVerificationKey2018.js b/node_modules/@digitalbazaar/rsa-verification-key-2018/lib/RsaVerificationKey2018.js
+index 379e092..34c6715 100644
+--- a/node_modules/@digitalbazaar/rsa-verification-key-2018/lib/RsaVerificationKey2018.js
++++ b/node_modules/@digitalbazaar/rsa-verification-key-2018/lib/RsaVerificationKey2018.js
+@@ -1,14 +1,17 @@
+ /*!
+  * Copyright (c) 2018-2020 Digital Bazaar, Inc. All rights reserved.
+  */
+-import * as env from './env.js';
+-import * as forge from 'node-forge';
++const env = require('./env.js');
++const forge = require('node-forge');
++
+ const {
+-  md: {sha256},
+-  pki: {getPublicKeyFingerprint, publicKeyFromPem},
+-  util: {binary: {base58, raw}}
++  md: { sha256 },
++  pki: { getPublicKeyFingerprint, publicKeyFromPem },
++  util: { binary: { base58, raw } }
+ } = forge;
+-import {LDVerifierKeyPair} from 'crypto-ld';
++
++const { LDVerifierKeyPair } = require('crypto-ld');
++
+ 
+ const SUITE_ID = 'RsaVerificationKey2018';
+ 
+@@ -26,7 +29,7 @@ const DEFAULT_RSA_KEY_BITS = 2048;
+  */
+ const DEFAULT_RSA_EXPONENT = 0x10001;
+ 
+-export class RsaVerificationKey2018 extends LDVerifierKeyPair {
++class RsaVerificationKey2018 extends LDVerifierKeyPair {
+   /* eslint-disable max-len */
+   /**
+    * An implementation of
+@@ -397,3 +400,5 @@ function createPss() {
+     saltLength: md.digestLength
+   });
+ }
++
++module.exports = {RsaVerificationKey2018}
+diff --git a/node_modules/@digitalbazaar/rsa-verification-key-2018/lib/env.js b/node_modules/@digitalbazaar/rsa-verification-key-2018/lib/env.js
+index ed43c8a..d41fc7f 100644
+--- a/node_modules/@digitalbazaar/rsa-verification-key-2018/lib/env.js
++++ b/node_modules/@digitalbazaar/rsa-verification-key-2018/lib/env.js
+@@ -1,8 +1,10 @@
+ /*!
+  * Copyright (c) 2020 Digital Bazaar, Inc. All rights reserved.
+  */
+-export const nodejs = (
++const nodejs = (
+   typeof process !== 'undefined' && process.versions && process.versions.node);
+ 
+-export const browser = !nodejs &&
++const browser = !nodejs &&
+   (typeof window !== 'undefined' || typeof self !== 'undefined');
++
++module.exports = {nodejs, browser};

@@ -18,6 +18,9 @@
   "bugs": {
     "url": "https://github.com/vijay151096/vercredjs/issues"
   },
+  "scripts": {
+    "postinstall": "patch-package"
+  },
   "homepage": "https://github.com/vijay151096/vercredjs#readme",
   "dependencies": {
     "@digitalbazaar/rsa-signature-2018": "github:digitalcredentials/rsa-signature-2018",
@@ -26,6 +29,7 @@
     "@digitalcredentials/jsonld-signatures": "^10.0.1",
     "@digitalcredentials/vc": "^7.0.0",
     "file-system": "^2.2.2",
-    "jsonld-document-loader": "^2.0.0"
+    "patch-package": "^8.0.0",
+    "postinstall": "^0.9.0"
   }
 }
