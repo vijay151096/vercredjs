@@ -1,0 +1,30 @@
+{
+  "name": "vercredjs",
+  "version": "1.0.0",
+  "description": "js version of verify credential",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/vijay151096/vercredjs.git"
+  },
+  "keywords": [
+    "vercredjs"
+  ],
+  "author": "Vijaykumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vijay151096/vercredjs/issues"
+  },
+  "homepage": "https://github.com/vijay151096/vercredjs#readme",
+  "dependencies": {
+    "@digitalbazaar/rsa-signature-2018": "github:digitalcredentials/rsa-signature-2018",
+    "@digitalbazaar/rsa-verification-key-2018": "github:digitalbazaar/rsa-verification-key-2018#initial",
+    "@digitalcredentials/jsonld": "^6.0.0",
+    "@digitalcredentials/jsonld-signatures": "^10.0.1",
+    "@digitalcredentials/vc": "^7.0.0",
+    "file-system": "^2.2.2"
+  }
+}
