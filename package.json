@@ -25,6 +25,7 @@
     "@digitalcredentials/jsonld": "^6.0.0",
     "@digitalcredentials/jsonld-signatures": "^10.0.1",
     "@digitalcredentials/vc": "^7.0.0",
-    "file-system": "^2.2.2"
+    "file-system": "^2.2.2",
+    "jsonld-document-loader": "^2.0.0"
   }
 }

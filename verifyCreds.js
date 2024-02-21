@@ -2,45 +2,26 @@ const vcjs = require('@digitalcredentials/vc');
 const { RsaSignature2018 } = require('./lib/jsonld-signatures/suites/rsa2018/RsaSignature2018');
 const { AssertionProofPurpose } = require('./lib/jsonld-signatures/purposes/AssertionProofPurpose.js');
 const jsonld = require('@digitalcredentials/jsonld');
+const {ProofPurpose, ProofType, documentLoader} = require("./Utils");
 
-const ProofType = {
-  ED25519: 'Ed25519Signature2018',
-  RSA: 'RsaSignature2018',
-};
-
-const ProofPurpose = {
-  Assertion: 'assertionMethod',
-  PublicKey: 'publicKey',
-};
 
 async function verifyCredential(
   verifiableCredential
 ){
   console.log("\n\n  ************ Verification Initiated ************ \n\n")
-  let purpose;
-  switch (verifiableCredential.proof.proofPurpose) {
-    case ProofPurpose.Assertion:
-      purpose = new AssertionProofPurpose();
-      break;
-  }
 
-  let suite;
   const suiteOptions = {
     verificationMethod: verifiableCredential.proof.verificationMethod,
     date: verifiableCredential.proof.created,
   };
-  switch (verifiableCredential.proof.type) {
-    case ProofType.RSA: {
-      suite = new RsaSignature2018(suiteOptions);
-      break;
-    }
-  }
 
+  const purpose = new AssertionProofPurpose();
+  const suite  =new RsaSignature2018(suiteOptions);
   const vcjsOptions = {
     purpose,
     suite,
     credential: verifiableCredential,
-    documentLoader: jsonld.documentLoaders.node(),
+    documentLoader: await documentLoader,
   };
 
   const result = await vcjs.verifyCredential(vcjsOptions);
