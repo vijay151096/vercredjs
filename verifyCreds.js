@@ -27,6 +27,8 @@ async function verifyCredential(
 
   console.log("\nVerify Credential Response => ", JSON.stringify(result, null, 4));
 
+  console.log("\nVerification Result => ", JSON.stringify(result.verified, null, 4));
+
   console.log("\n\n  ************ Verification Completed ************ \n\n")
 
 
