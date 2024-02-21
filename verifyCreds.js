@@ -1,8 +1,7 @@
 const vcjs = require('@digitalcredentials/vc');
 const { RsaSignature2018 } = require('./lib/jsonld-signatures/suites/rsa2018/RsaSignature2018');
 const { AssertionProofPurpose } = require('./lib/jsonld-signatures/purposes/AssertionProofPurpose.js');
-const jsonld = require('@digitalcredentials/jsonld');
-const {ProofPurpose, ProofType, documentLoader} = require("./Utils");
+const { documentLoader} = require("./Utils");
 
 
 async function verifyCredential(

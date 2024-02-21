@@ -23,11 +23,11 @@
   },
   "homepage": "https://github.com/vijay151096/vercredjs#readme",
   "dependencies": {
-    "@digitalbazaar/rsa-signature-2018": "github:digitalcredentials/rsa-signature-2018",
-    "@digitalbazaar/rsa-verification-key-2018": "github:digitalbazaar/rsa-verification-key-2018#initial",
-    "@digitalcredentials/jsonld": "^6.0.0",
-    "@digitalcredentials/jsonld-signatures": "^10.0.1",
-    "@digitalcredentials/vc": "^7.0.0",
+    "@digitalbazaar/rsa-signature-2018": "digitalbazaar/rsa-signature-2018",
+    "@digitalbazaar/rsa-verification-key-2018": "digitalbazaar/rsa-verification-key-2018",
+    "@digitalcredentials/jsonld": "^5.2.1",
+    "@digitalcredentials/jsonld-signatures": "^9.3.1",
+    "@digitalcredentials/vc": "^1.1.2",
     "file-system": "^2.2.2",
     "patch-package": "^8.0.0",
     "postinstall": "^0.9.0"
