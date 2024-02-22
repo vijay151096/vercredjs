@@ -9,6 +9,8 @@ async function verifyCredential(
 ){
   console.log("\n\n  ************ Verification Initiated ************ \n\n")
 
+
+  console.log("\n\n\n  Verifiable Credential -> ", JSON.stringify(verifiableCredential, null, 4));
   const suiteOptions = {
     verificationMethod: verifiableCredential.proof.verificationMethod,
     date: verifiableCredential.proof.created,
