@@ -29,4 +29,4 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - run: node 'require("./verfifyCreds.js").verifyCredential(${{ inputs.credential }})'
+    - run: node -e 'require("./verfifyCreds.js").verifyCredential(${{ inputs.credential }})'
